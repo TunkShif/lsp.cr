@@ -1,0 +1,9 @@
+name: lsp
+version: 0.1.0
+
+authors:
+  - TunkShif <tunkshif@foxmail.com>
+
+crystal: 1.4.1
+
+license: MIT
