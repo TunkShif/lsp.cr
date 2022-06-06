@@ -1,7 +1,6 @@
 require "json"
 require "./position"
 require "./text_edit"
-require "./annotated_text_edit"
 
 module LSP
   struct TextDocumentEdit

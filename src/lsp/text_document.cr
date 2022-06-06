@@ -55,4 +55,14 @@ module LSP
     # The edits to be applied.
     property edits : Array(TextEdit | AnnotatedTextEdit)
   end
+
+  # General text document registration options.
+  module TextDocumentRegistrationOptions
+    include JSON::Serializable
+
+    # A document selector to identify the scope of the registration. If set to
+    # null the document selector provided on the client side will be used.
+    @[JSON::Field(key: "documentSelector")]
+    property document_selector : DocumentSelector?
+  end
 end

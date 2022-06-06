@@ -1,5 +1,4 @@
 require "json"
-require "../workspace"
 require "./*"
 
 module LSP

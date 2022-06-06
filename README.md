@@ -6,7 +6,8 @@
 
 Current Progress:
 
-TODO: [Register Capability][1]
+- TODO: NotebookDocument
+- TO BE FIXED: enum json converter
 
 ## Installation
 
@@ -27,4 +28,3 @@ require "lsp"
 ```
 
 [0]: https://microsoft.github.io/language-server-protocol/
-[1]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#client_registerCapability
