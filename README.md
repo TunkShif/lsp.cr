@@ -6,7 +6,7 @@
 
 Current Progress:
 
-- TODO: NotebookDocument
+- TODO: Language Features
 - TO BE FIXED: enum json converter
 
 ## Installation

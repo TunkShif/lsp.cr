@@ -1,5 +1,6 @@
 require "json"
 require "../position"
+require "./*"
 
 module LSP
   struct ServerCapabilities
