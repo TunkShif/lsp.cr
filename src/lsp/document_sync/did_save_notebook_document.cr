@@ -1,5 +1,5 @@
 require "json"
-require "../../notebook_document"
+require "../notebook_document"
 
 module LSP
   # The params sent in a save notebook document notification.

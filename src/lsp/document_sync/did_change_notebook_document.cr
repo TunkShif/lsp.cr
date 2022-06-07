@@ -1,7 +1,7 @@
 require "json"
 require "./did_change_text_document"
-require "../../notebook_document"
-require "../../document_filter"
+require "../notebook_document"
+require "../document_filter"
 
 module LSP
   # The params sent in a change notebook document notification.

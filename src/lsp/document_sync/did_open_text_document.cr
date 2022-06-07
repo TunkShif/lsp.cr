@@ -1,5 +1,5 @@
 require "json"
-require "../../text_document"
+require "../text_document"
 
 module LSP
   struct DidOpenTextDocumentParams

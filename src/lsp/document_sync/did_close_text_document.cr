@@ -1,6 +1,6 @@
 require "json"
-require "../../text_document"
-require "../../text_document_sync"
+require "../text_document"
+require "../text_document_sync"
 
 module LSP
   struct DidCloseTextDocumentParams

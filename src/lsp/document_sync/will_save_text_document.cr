@@ -1,5 +1,5 @@
 require "json"
-require "../../text_document"
+require "../text_document"
 
 module LSP
   # The parameters send in a will save text document notification.
