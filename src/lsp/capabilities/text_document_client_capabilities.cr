@@ -15,6 +15,7 @@ module LSP
     property signature_help : SignatureHelpClientCapabilities?
 
     property declaration : DeclarationClientCapabilities?
+
     property definition : DefinitionClientCapabilities?
 
     @[JSON::Field(key: "typeDefinition")]
