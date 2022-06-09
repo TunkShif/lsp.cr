@@ -1,4 +1,5 @@
 require "json"
+require "./notebook_filter"
 
 module LSP
   # A notebook document

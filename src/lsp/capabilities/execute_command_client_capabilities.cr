@@ -1,4 +1,5 @@
 require "json"
+require "../work_done_progress"
 
 module LSP
   struct ExecuteCommandClientCapabilities

@@ -1,5 +1,7 @@
 require "json"
 require "../position"
+require "../text_document_sync"
+require "../file_operation_registration"
 require "./*"
 
 module LSP

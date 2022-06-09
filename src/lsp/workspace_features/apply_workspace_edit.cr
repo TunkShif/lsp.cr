@@ -1,4 +1,5 @@
 require "json"
+require "../workspace_edit"
 
 module LSP
   struct ApplyWorkspaceEditParams

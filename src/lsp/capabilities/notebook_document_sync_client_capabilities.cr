@@ -1,4 +1,5 @@
 require "json"
+require "../registration"
 require "../notebook_document"
 
 module LSP

@@ -1,6 +1,7 @@
 require "json"
-require "./text_edit"
 require "./position"
+require "./text_edit"
+require "./document_filter"
 
 module LSP
   struct TextDocumentIdentifier

@@ -1,4 +1,6 @@
 require "json"
+require "../work_done_progress"
+require "../partial_result_params"
 
 module LSP
   # The parameters of a Workspace Symbol Request.
