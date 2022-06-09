@@ -2,7 +2,7 @@ require "json"
 require "./message"
 
 module LSP
-  struct ResponseMessage
+  abstract class ResponseMessage(T)
     include Message
     include JSON::Serializable
 
@@ -10,10 +10,14 @@ module LSP
 
     #	The result of a request. This member is REQUIRED on success.
     #	This member MUST NOT exist if there was an error invoking the method.
-    property result : JSON::Any?
+    @[JSON::Field(emit_null: true)]
+    property result : T?
 
     # The error object in case a request fails.
     property error : ResponseError?
+
+    def initialize(@id, @result, @error = nil)
+    end
   end
 
   struct ResponseError
