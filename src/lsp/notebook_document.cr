@@ -42,6 +42,18 @@ module LSP
     property uri : String
   end
 
+  struct NotebookSelector
+    include JSON::Serializable
+
+    # The notebook to be synced If a string
+    # value is provided it matches against the
+    # notebook type. '*' matches every notebook.
+    property notebook : (String | NotebookDocumentFilter)?
+
+    # The cells of the matching notebook to be synced.
+    property cells : Array(NamedTuple(language: String))
+  end
+
   # A notebook cell.
   #
   # A cell's document URI must be unique across ALL notebook

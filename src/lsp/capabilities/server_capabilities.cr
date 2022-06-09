@@ -25,7 +25,7 @@ module LSP
 
     # Defines how notebook documents are synced.
     @[JSON::Field(key: "notebookDocumentSync")]
-    property notebook_document_sync : (NoteBookDocumentSyncOptions | NotebookDocumentsSyncRegistrationOptions)?
+    property notebook_document_sync : (NotebookDocumentSyncOptions | NotebookDocumentSyncRegistrationOptions)?
 
     # The server provides completion support.
     @[JSON::Field(key: "completionProvider")]

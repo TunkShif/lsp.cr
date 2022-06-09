@@ -1,7 +1,7 @@
 require "json"
 
 module LSP
-  struct DidChangeConfigurationCapabilities
+  struct DidChangeConfigurationClientCapabilities
     include JSON::Serializable
 
     # Did change configuration notification supports dynamic registration.

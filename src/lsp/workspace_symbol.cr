@@ -13,7 +13,7 @@ module LSP
     @[JSON::Field(converter: Enum::ValueConverter(SymbolKind))]
     property kind : SymbolKind
 
-    # TO BE FIXED : How to serialize an array of enums?
+    # FIXME : How to serialize an array of enums?
     # Tags for this completion item.
     property tags : Array(SymbolTag)?
 

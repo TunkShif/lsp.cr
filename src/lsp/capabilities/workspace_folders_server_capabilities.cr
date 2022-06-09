@@ -1,7 +1,7 @@
 require "json"
 
 module LSP
-  struct WorkspaceFolderServerCapabilities
+  struct WorkspaceFoldersServerCapabilities
     include JSON::Serializable
 
     # The server has support for workspace folders

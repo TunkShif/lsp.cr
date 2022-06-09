@@ -6,7 +6,7 @@
 
 Current Progress:
 
-- TODO: Language Features
+- TODO: Language Features Capabilities
 - TO BE FIXED: enum json converter
 
 ## Installation
