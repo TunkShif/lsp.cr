@@ -32,140 +32,214 @@ module LSP
   # TODO: complex capabilities
 
   struct DeclarationOptions
+    include JSON::Serializable
   end
+
   struct DeclarationRegistrationOptions
+    include JSON::Serializable
   end
 
   struct TypeDefinitionOptions
+    include JSON::Serializable
   end
+
   struct TypeDefinitionRegistrationOptions
+    include JSON::Serializable
   end
 
   struct DefinitionOptions
+    include JSON::Serializable
   end
+
   struct DefinitionRegistrationOptions
+    include JSON::Serializable
   end
 
   struct ImplementationOptions
+    include JSON::Serializable
   end
+
   struct ImplementationRegistrationOptions
+    include JSON::Serializable
   end
 
   struct HoverOptions
+    include JSON::Serializable
   end
 
   struct ReferenceOptions
+    include JSON::Serializable
   end
 
   struct DocumentHighlightOptions
+    include JSON::Serializable
   end
 
   struct DocumentLinkOptions
+    include JSON::Serializable
   end
 
   struct CodeLensOptions
+    include JSON::Serializable
   end
 
   struct DocumentColorOptions
+    include JSON::Serializable
   end
+
   struct DocumentColorRegistrationOptions
+    include JSON::Serializable
   end
 
   struct DocumentFormattingOptions
+    include JSON::Serializable
   end
 
   struct DocumentRangeFormattingOptions
+    include JSON::Serializable
   end
 
   struct DocumentOnTypeFormattingOptions
+    include JSON::Serializable
   end
 
   struct RenameOptions
+    include JSON::Serializable
   end
 
   struct FoldingRangeClientCapabilities
+    include JSON::Serializable
   end
+
   struct FoldingRangeOptions
+    include JSON::Serializable
   end
+
   struct FoldingRangeRegistrationOptions
+    include JSON::Serializable
   end
 
   struct SelectionRangeOptions
+    include JSON::Serializable
   end
+
   struct SelectionRangeRegistrationOptions
+    include JSON::Serializable
   end
 
   struct LinkedEditingRangeOptions
+    include JSON::Serializable
   end
+
   struct LinkedEditingRangeRegistrationOptions
+    include JSON::Serializable
   end
 
   struct CallHierarchyOptions
+    include JSON::Serializable
   end
+
   struct CallHierarchyRegistrationOptions
+    include JSON::Serializable
   end
 
   struct TypeHierarchyOptions
+    include JSON::Serializable
   end
+
   struct TypeHierarchyRegistrationOptions
+    include JSON::Serializable
   end
 
   struct InlineValueOptions
+    include JSON::Serializable
   end
+
   struct InlineValueRegistrationOptions
+    include JSON::Serializable
   end
 
   struct InlayHintOptions
+    include JSON::Serializable
   end
+
   struct InlayHintRegistrationOptions
+    include JSON::Serializable
   end
 
   struct DiagnosticOptions
+    include JSON::Serializable
   end
+
   struct DiagnosticRegistrationOptions
+    include JSON::Serializable
   end
 
   struct SemanticTokensOptions
+    include JSON::Serializable
   end
+
   struct SemanticTokensRegistrationOptions
+    include JSON::Serializable
   end
 
   struct MonikerOptions
+    include JSON::Serializable
   end
+
   struct MonikerRegistrationOptions
+    include JSON::Serializable
   end
+
   struct DocumentSymbolClientCapabilities
+    include JSON::Serializable
   end
+
   struct DocumentSymbolOptions
+    include JSON::Serializable
   end
 
   struct SemanticTokensClientCapabilities
+    include JSON::Serializable
   end
 
   struct InlayHintClientCapabilities
+    include JSON::Serializable
   end
 
   struct CompletionClientCapabilities
+    include JSON::Serializable
   end
+
   struct CompletionOptions
+    include JSON::Serializable
   end
 
   struct PublishDiagnosticsClientCapabilities
+    include JSON::Serializable
   end
 
   struct DiagnosticClientCapabilities
+    include JSON::Serializable
   end
 
   struct SignatureHelpClientCapabilities
+    include JSON::Serializable
   end
+
   struct SignatureHelpOptions
+    include JSON::Serializable
   end
 
   struct CodeActionClientCapabilities
+    include JSON::Serializable
   end
+
   struct CodeActionOptions
+    include JSON::Serializable
   end
 
   struct RenameClientCapabilities
+    include JSON::Serializable
   end
 end
