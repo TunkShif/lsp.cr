@@ -15,7 +15,7 @@ module LSP
     # The file's URI.
     property uri : String
     # The change type.
-    @[JSON::Field(converter: Enum::ValueConverter(FileChangeType))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::FileChangeType))]
     property type : FileChangeType
   end
 

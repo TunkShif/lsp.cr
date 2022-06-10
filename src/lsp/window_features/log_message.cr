@@ -5,7 +5,7 @@ module LSP
   struct LogMessageParams
     include JSON::Serializable
 
-    @[JSON::Field(converter: Enum::ValueConverter(MessageType))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::MessageType))]
     property type : MessageType
     property message : String
   end

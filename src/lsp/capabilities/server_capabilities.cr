@@ -8,6 +8,45 @@ module LSP
   struct ServerCapabilities
     include JSON::Serializable
 
+    def initialize(
+      @workspace = nil,
+      @position_encoding = nil,
+      @text_document_sync = nil,
+      @notebook_document_sync = nil,
+      @completion_provider = nil,
+      @hover_provider = false,
+      @signature_help_provider = nil,
+      @declaration_provider = false,
+      @definition_provider = false,
+      @type_definition_provider = false,
+      @implementation_provider = false,
+      @references_provider = false,
+      @document_highlight_provider = false,
+      @document_symbol_provider = false,
+      @code_action_provider = false,
+      @code_lens_provider = nil,
+      @document_link_provider = nil,
+      @color_provider = false,
+      @document_formatting_provider = nil,
+      @document_range_formatting_provider = false,
+      @document_on_type_formatting_provider = nil,
+      @rename_provider = false,
+      @folding_range_provider = false,
+      @execute_command_provider = nil,
+      @selection_range_provider = false,
+      @linked_editing_range_provider = false,
+      @call_hierarchy_provider = false,
+      @semantic_tokens_provider = nil,
+      @moniker_provider = false,
+      @type_hierarchy_provider = false,
+      @inline_value_provider = false,
+      @inlay_hint_provider = false,
+      @diagnostic_provider = nil,
+      @workspace_symbol_provider = false,
+      @experimental = nil
+    )
+    end
+
     # The position encoding the server picked from the encodings offered
     # by the client via the client capability `general.positionEncodings`.
     #
@@ -23,7 +62,7 @@ module LSP
     # TextDocumentSyncKind number. If omitted it defaults to
     # `TextDocumentSyncKind.None`.
     @[JSON::Field(key: "textDocumentSync")]
-    property text_document_sync : (TextDocumentSyncOptions | TextDocumentSyncKind)?
+    property text_document_sync : TextDocumentSyncOptions?
 
     # Defines how notebook documents are synced.
     @[JSON::Field(key: "notebookDocumentSync")]
@@ -119,7 +158,7 @@ module LSP
 
     # The server provides linked editing range support.
     @[JSON::Field(key: "linkedEditingRangeProvider")]
-    property linked_editing_range_provider : (Bool? | LinkedEditingRangeOptions | LinkedEditingRangeRegistrationOptions)?
+    property linked_editing_range_provider : (Bool | LinkedEditingRangeOptions | LinkedEditingRangeRegistrationOptions)?
 
     # The server provides call hierarchy support.
     @[JSON::Field(key: "callHierarchyProvider")]
@@ -127,7 +166,7 @@ module LSP
 
     # The server provides semantic tokens support.
     @[JSON::Field(key: "semanticTokensProvider")]
-    property semantic_tokens_provider : (SemanticTokensOptions | SemanticTokensRegistrationOptions)
+    property semantic_tokens_provider : (SemanticTokensOptions | SemanticTokensRegistrationOptions)?
 
     # Whether server provides moniker support.
     @[JSON::Field(key: "monikerProvider")]
@@ -154,12 +193,18 @@ module LSP
     property workspace_symbol_provider : (Bool | WorkspaceSymbolOptions)?
 
     # Workspace specific server capabilities
-    property workspace : Workspace
+    property workspace : Workspace?
 
     property experimental : JSON::Any?
 
     struct Workspace
       include JSON::Serializable
+
+      def initialize(
+        @workspace_folders = nil,
+        @file_operations = nil
+      )
+      end
 
       # The server supports workspace folder.
       @[JSON::Field(key: "workspaceFolders")]
@@ -171,6 +216,16 @@ module LSP
 
       struct FileOperations
         include JSON::Serializable
+
+        def initialize(
+          @did_create = nil,
+          @will_create = nil,
+          @did_rename = nil,
+          @will_rename = nil,
+          @did_delete = nil,
+          @will_delete = nil
+        )
+        end
 
         @[JSON::Field(key: "didCreate")]
         property did_create : FileOperationRegistrationOptions?

@@ -27,6 +27,15 @@ module LSP
   struct TextDocumentSyncOptions
     include JSON::Serializable
 
+    def initialize(
+      @change = TextDocumentSyncKind::None,
+      @open_close = false,
+      @will_save = false,
+      @will_save_wait_until = false,
+      @save = nil
+    )
+    end
+
     # Open and close notifications are sent to the server. If omitted open
     # close notification should not be sent.
     @[JSON::Field(key: "openClose")]
@@ -36,7 +45,7 @@ module LSP
     # TextDocumentSyncKind.None, TextDocumentSyncKind.Full and
     # TextDocumentSyncKind.Incremental. If omitted it defaults to
     # TextDocumentSyncKind.None.
-    @[JSON::Field(converter: Enum::ValueConverter(TextDocumentSyncKind))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::TextDocumentSyncKind))]
     property change : TextDocumentSyncKind?
 
     # If present will save notifications are sent to the server. If omitted

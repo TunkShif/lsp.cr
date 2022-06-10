@@ -5,7 +5,7 @@ module LSP
   struct ShowMessageParams
     include JSON::Serializable
 
-    @[JSON::Field(converter: Enum::ValueConverter(MessageType))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::MessageType))]
     property type : MessageType
     property message : String
   end
@@ -13,7 +13,7 @@ module LSP
   struct ShowMessageRequestParams
     include JSON::Serializable
 
-    @[JSON::Field(converter: Enum::ValueConverter(MessageType))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::MessageType))]
     property type : MessageType
 
     # The actual message

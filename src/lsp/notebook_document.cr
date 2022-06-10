@@ -64,7 +64,7 @@ module LSP
     include JSON::Serializable
 
     # The cell's kind
-    @[JSON::Field(converter: Enum::ValueConverter(NotebookCellKind))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::NotebookCellKind))]
     property kind : NotebookCellKind
 
     # The URI of the cell's text document

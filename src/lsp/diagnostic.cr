@@ -5,11 +5,25 @@ module LSP
   struct Diagnostic
     include JSON::Serializable
 
+    def initialize(
+      @range,
+      @message,
+      @source = nil,
+      @severity = nil,
+      @code = nil,
+      @code_description = nil,
+      @tags = nil,
+      @related_information = nil,
+      @data = nil
+    )
+    end
+
     # The range at which the message applies.
     property range : Range
 
     # The diagnostic's severity. Can be omitted. If omitted it is up to the
     # client to interpret diagnostics as error, warning, info or hint.
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::DiagnosticSeverity))]
     property severity : DiagnosticSeverity?
 
     # The diagnostic's code, which might appear in the user interface.
@@ -17,7 +31,7 @@ module LSP
 
     # An optional property to describe the error code
     @[JSON::Field(key: "codeDescription")]
-    property code_description : CodeDescription
+    property code_description : CodeDescription?
 
     # A human-readable string describing the source of this
     # diagnostic, e.g. 'typescript' or 'super lint'.
@@ -27,12 +41,12 @@ module LSP
     property message : String
 
     # Additional metadata about the diagnostic.
-    property tags : Array(DiagnosticTag)
+    property tags : Array(DiagnosticTag)?
 
     # An array of related diagnostic information, e.g. when symbol-names within
     # a scope collide all definitions can be marked via this property.
     @[JSON::Field(key: "relatedInformation")]
-    property related_information : Array(DiagnosticRelatedInformation)
+    property related_information : Array(DiagnosticRelatedInformation)?
 
     # A data entry field that is preserved between a
     # `textDocument/publishDiagnostics` notification and

@@ -8,6 +8,6 @@ module LSP
 
     property id : Int32 | String
     property method : String
-    property params : T?
+    property params : T
   end
 end

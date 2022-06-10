@@ -6,7 +6,8 @@
 
 Current Progress:
 
-- TODO: Language Features Capabilities
+- TODO: add missing language features related definition
+- TODO: add initialize method for strcuts in need
 - TO BE FIXED: enum json converter
 
 ## Installation

@@ -169,6 +169,24 @@ module LSP
 
   struct DiagnosticOptions
     include JSON::Serializable
+
+    def initialize(@inter_file_dependencies, @workspace_diagnostics, @identifier = nil)
+    end
+
+    # An optional identifier under which the diagnostics are
+    # managed by the client.
+    property identifier : String?
+
+    # Whether the language has inter file dependencies meaning that
+    # editing code in one file can result in a different diagnostic
+    # set in another file. Inter file dependencies are common for
+    # most programming languages and typically uncommon for linters.
+    @[JSON::Field(key: "interFileDependencies")]
+    property inter_file_dependencies : Bool
+
+    # The server provides support for workspace diagnostics as well.
+    @[JSON::Field(key: "workspaceDiagnostics")]
+    property workspace_diagnostics : Bool
   end
 
   struct DiagnosticRegistrationOptions

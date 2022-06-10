@@ -1,12 +1,15 @@
 require "json"
 require "./message"
 
-  module LSP
-    struct NotificationMessage
-      include Message
-      include JSON::Serializable
+module LSP
+  abstract class NotificationMessage(T)
+    include Message
+    include JSON::Serializable
 
-      property method : String
-      property params : JSON::Any?
-    end
+    # def intialize(@method, @params = nil)
+    # end
+
+    property method : String
+    property params : T
   end
+end

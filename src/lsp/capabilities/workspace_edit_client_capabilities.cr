@@ -27,7 +27,7 @@ module LSP
     # Whether the client in general supports change annotations on text edits,
     # create file, rename file and delete file changes.
     @[JSON::Field(key: "changeAnnotationSupport")]
-    property change_annotation_support : ChangeAnnotationSupport
+    property change_annotation_support : ChangeAnnotationSupport?
 
     struct ChangeAnnotationSupport
       include JSON::Serializable

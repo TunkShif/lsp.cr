@@ -1,4 +1,5 @@
 require "json"
+require "./location"
 require "./document_symbol"
 
 module LSP
@@ -10,7 +11,7 @@ module LSP
     property name : String
 
     # The kind of this symbol.
-    @[JSON::Field(converter: Enum::ValueConverter(SymbolKind))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::SymbolKind))]
     property kind : SymbolKind
 
     # FIXME : How to serialize an array of enums?

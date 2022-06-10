@@ -10,7 +10,7 @@ module LSP
     @[JSON::Field(key: "textDocument")]
     property text_document : TextDocumentIdentifier
 
-    @[JSON::Field(converter: Enum::ValueConverter(TextDocumentSaveReason))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::TextDocumentSaveReason))]
     property reason : TextDocumentSaveReason
   end
 

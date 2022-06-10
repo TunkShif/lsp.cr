@@ -16,7 +16,7 @@ module LSP
     # The error object in case a request fails.
     property error : ResponseError?
 
-    def initialize(@id, @result, @error = nil)
+    def initialize(@id = nil, @result = nil, @error = nil)
     end
   end
 

@@ -32,7 +32,7 @@ module LSP
 
     # The version number of this document (it will increase after each
     # change, including undo/redo).
-    property version : String
+    property version : Int32
 
     # The content of the opened text document.
     property text : String

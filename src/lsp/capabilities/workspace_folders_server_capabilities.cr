@@ -4,6 +4,9 @@ module LSP
   struct WorkspaceFoldersServerCapabilities
     include JSON::Serializable
 
+    def initialize(@supported = false, @change_notifications = false)
+    end
+
     # The server has support for workspace folders
     property supported : Bool?
 

@@ -27,10 +27,13 @@ module LSP
     # The properties that a client can resolve lazily. Usually
     # `location.range`
     @[JSON::Field(key: "resolveSupport")]
-    property resolve_support : NamedTuple(properties: Array(String))
+    property resolve_support : NamedTuple(properties: Array(String))?
 
     struct SymbolKindValue
       include JSON::Serializable
+
+      # FIXME: How to serialize an array of enums?
+      # temporary fix: just using integers
 
       # The symbol kind values the client supports. When this
       # property exists the client also guarantees that it will
@@ -41,15 +44,20 @@ module LSP
       # the symbol kinds from `File` to `Array` as defined in
       # the initial version of the protocol.
       @[JSON::Field(key: "valueSet")]
-      property value_set : Array(SymbolKind)?
+      # property value_set : Array(SymbolKind)?
+      property value_set : Array(Int32)?
     end
 
     struct TagSupportValue
       include JSON::Serializable
 
+      # FIXME: How to serialize an array of enums?
+      # temporary fix: just using integers
+
       # The tags supported by the client.
       @[JSON::Field(key: "valueSet")]
-      property value_set : Array(SymbolTag)?
+      # property value_set : Array(SymbolTag)?
+      property value_set : Array(Int32)?
     end
   end
 

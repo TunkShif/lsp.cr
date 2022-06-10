@@ -61,6 +61,9 @@ module LSP
   struct InitializeResult
     include JSON::Serializable
 
+    def initialize(@capabilities, @server_info = nil)
+    end
+
     # The capabilities the language server provides.
     property capabilities : ServerCapabilities
 

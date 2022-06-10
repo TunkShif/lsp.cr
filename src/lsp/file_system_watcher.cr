@@ -45,7 +45,7 @@ module LSP
     # The kind of events of interest. If omitted it defaults
     # to WatchKind.Create | WatchKind.Change | WatchKind.Delete
     # which is 7.
-    @[JSON::Field(converter: Enum::ValueConverter(WatchKind))]
+    @[JSON::Field(converter: Enum::ValueConverter(LSP::WatchKind))]
     property kind : WatchKind?
   end
 
